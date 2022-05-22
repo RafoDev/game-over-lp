@@ -1,0 +1,39 @@
+@import 'mixins';
+@import 'footer';
+@import 'productos';
+@import 'cover';
+@import 'header';
+@import 'contact';
+
+:root {
+  --primary-color: #F9A66C;
+  --secondary-color: #FFC04B;
+  --tertiary-color: F17A7E;
+  --bg-light-color: #F9FAF4;
+  --bg-dark-color: #4A6163;
+  --text-light-color: #F9FAF4;
+  --text-dark-color: #333;
+  --font-family: 'Alegreya Sans', sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-bold: 400 + 300;
+  --font-weight-black: 900;
+  --max-width: 1080px;
+}
+
+  body {
+  font-family: var(--font-family);
+  background-color: var(--bg-light-color);
+  color: #333;
+  margin: 0;
+  transition: .3s ease all;
+  &-dark {
+    background: rgb(39, 39, 39);
+    color: white;
+  }
+}
+
+.root{
+  background-color: inherit;
+  color:inherit;
+  margin: 0;
+}
