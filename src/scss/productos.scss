@@ -3,8 +3,28 @@ $bold: $regular + 300;
 $black: $regular + 500;
 
 .productos {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 100%;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+    &__form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:1rem
+    }
+    &__search{
+        width: 50%;
+        padding: 0.5em 1em;
+        font-size: 1rem;
+        border:1px solid rgba(51, 51, 51, 0.304);
+        border-radius: .5em;
+    }
     &-container {
         text-align: center;
         padding-bottom: 2rem;
@@ -12,9 +32,6 @@ $black: $regular + 500;
 
         max-width: var(--max-width);
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
     }
 
     &__title {
@@ -37,13 +54,12 @@ $black: $regular + 500;
     }
 
     &__button {
-        border-radius: 10px;
-        background-color: var(--primary-color);
-        padding: 0.5em 1em;
-        list-style: none;
         cursor: pointer;
-        transition: background-color 0.25s ease;
-        font-size: 1rem;
+        transition: box-shadow 0.25s ease-in-out;
+        border-radius: .5em;
+        @include button-hover {
+            box-shadow: 2px 2px 0 2px var(--secondary-color), -2px -2px 0 2px var(--primary-color);
+        }
     }
 
     &__button.current {
@@ -60,7 +76,10 @@ $black: $regular + 500;
         display: flex;
         flex-flow: row wrap;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
+        max-width: 1080px;
+
         &-item {
             box-sizing: border-box;
             width: 100%;
@@ -136,31 +155,61 @@ $black: $regular + 500;
         justify-content: space-between;
         align-items: center;
         width: 200px;
+        gap: 1rem;
+        // box-shadow: 1px 1px 10px rgba(51, 51, 51, 0.103);
+        border: 1px solid rgba(51, 51, 51, 0.054);
+
     }
 
     &-thumbnail-container {
+        margin: 0;
         width: 100%;
+        overflow: hidden;
+        font-size: 0;
     }
+
     &-thumbnail {
+        background-color: #333;
+        margin: 0;
+        object-fit: cover;
         width: 100%;
+        height: 250px;
+        transition: transform .25s ease;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &-name {
+        margin: 0;
     }
 
     &-price {
-        font-size: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin: 0;
+
     }
-    &-buy-button{
+
+    &-buy-button {
         text-decoration: none;
-        color:var(--text-dark-color);
+        color: var(--text-dark-color);
         background-color: var(--primary-color);
-        padding: 0.5em .5em;
+        padding: 0.5em 3em;
         display: flex;
-        gap:1rem;
+        gap: 1rem;
         justify-items: center;
         align-items: center;
         border-radius: 1rem;
-        &-text{
-            margin:0;
-        }    
+        transition: box-shadow .25s ease;
+        &:hover{
+            box-shadow: 1px 1px 10px rgba(51, 51, 51, 0.383);
+        }
+
+        &-text {
+            margin: 0;
+        }
     }
 }
 

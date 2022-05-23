@@ -31,7 +31,7 @@ const Products = ({addItemtoCard}) => {
                     </ul> */}
                     <div className="productos__gallery">
                             {
-                                productsArr.map(product => {
+                                productsArr.map(product => { 
                                     const {id,name,thumbnail,price} = product;
                                     return (
                                         <div key={id} className="productos__producto-container">
@@ -39,14 +39,13 @@ const Products = ({addItemtoCard}) => {
                                                 <img src={thumbnail} alt={name} className="productos__producto-thumbnail" />
                                             </figure>   
                                             <p className="productos__producto-price">{new Intl.NumberFormat('es-PE', { style: 'currency', currency: 'PEN' }).format(price)}</p>
-                                            <a 
-                                            href="#" 
+                                            <div 
                                             className="productos__producto-buy-button"
                                             onClick={(e)=>handleClick(e, id)}
                                             >
                                                 <i className="productos__producto-buy-button-icon fa-solid fa-cart-shopping"></i> 
                                                 <p className='productos__producto-buy-button-text'>Comprar</p>
-                                            </a>
+                                            </div>
                                         </div>
                                     );
                                 })

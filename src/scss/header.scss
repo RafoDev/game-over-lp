@@ -17,11 +17,17 @@
         padding: 1rem;
         @include flex-d-w-j-a-g(row, nowrap, space-between, center, 0);
         &__logo-container {
+            cursor: pointer;
             @include flex-d-w-j-a-g(row, nowrap, space-between, center, 2rem);
         }
         &__logo{
             width: auto;
             @include flex-d-w-j-a-g(row, nowrap, center, center, 1rem);
+            transition: transform .25s ease-in;
+            &:hover{
+                transform: scale(1.1);
+            }
+            
         }
         //
         &__cart-container{
@@ -46,10 +52,13 @@
         }
         &__logo-title {
             margin: 0;
-            font-weight: var(--font-weight-black);
+            letter-spacing: .25rem;
+            // font-weight: var(--font-weight-black);
             font-size: 2rem;
+            font-weight:400;
             margin: 0;
             color: var(--text-light-color);
+            font-family: 'VT323', monospace;;
         }
         &__menu-switch {
             background: #343d5b;
@@ -190,9 +199,11 @@
                 font-size: 1.5rem;
             }
             &__link {
-                text-transform: capitalize;
+                text-transform: uppercase;
                 color: var(--text-light-color);
                 position: relative;
+                font-size: 1rem;
+
                 &::after {
                     content: "";
                     position: absolute;
