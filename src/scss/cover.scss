@@ -19,7 +19,7 @@
             left:0;
             background-color: var(--bg-light-color);
             display: flex;
-            @include flex-d-w-j-a-g(column, nowrap, center, start,1.5rem);
+            @include flex-d-w-j-a-g(column, nowrap, center, flex-start,1.5rem);
             width:70%;
             padding:2em 1em;
             body.body-dark & {
@@ -40,7 +40,7 @@
     }
     &__info{
         box-sizing: border-box;
-        @include flex-d-w-j-a-g(row, wrap, center, start, 0);
+        @include flex-d-w-j-a-g(row, wrap, center, flex-start, 0);
         &-item{
             box-sizing: border-box;
             text-align: center;

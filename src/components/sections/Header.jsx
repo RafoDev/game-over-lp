@@ -1,20 +1,39 @@
 import React from 'react'
-const Header = () => {
-    const navToggle = document.getElementById('header-nav__menu-icon-label-close');
+import Cart from '../Cart';
+
+const Header = ({ cartItems, setOpenCart }) => {
+    const navToggle = document?.getElementById('header-nav__menu-icon-label-close');
     const handleToggle = (() => {
-        const menuLinkList = document.querySelector('.header-nav__menu-link-list');
-        menuLinkList.classList.toggle('header-nav__menu-link-list-show');
-        navToggle.classList.toggle('header-nav__menu-icon-label-close-show');
+        const menuLinkList = document?.querySelector('.header-nav__menu-link-list');
+        menuLinkList?.classList.toggle('header-nav__menu-link-list-show');
+        navToggle?.classList.toggle('header-nav__menu-icon-label-close-show');
     });
+
+    const handleOpenCard = () => {
+        setOpenCart(true);
+    }
+
     return (
         <header className="header">
             <div className="header-container">
                 <nav className="header-nav">
                     <article className="header-nav__logo-container">
-                        <img src="https://i.postimg.cc/fTBMvbKv/icon.png" alt="Logo de PCManía" className="header-nav__logo" />
-                        <h1 className="header-nav__title">
-                            PCMANÍA
-                        </h1>
+                        <div className="header-nav__logo">
+                            <img src="https://i.postimg.cc/fTBMvbKv/icon.png" alt="Logo de PCManía" className="header-nav__logo-img" />
+                            <h1 className="header-nav__logo-title">
+                                PCMANÍA
+                            </h1>
+                        </div>
+                        <div 
+                        className="header-nav__cart-container"
+                        onClick={handleOpenCard}
+                        >
+                            <i className="fa-solid fa-cart-shopping"></i>
+                            {cartItems.length ?
+                                (<p className="header-nav__cart-items-counter">{cartItems.length}</p>) :
+                                (<></>)
+                            }
+                        </div>
                     </article>
                     <div id="header-nav__menu-icon-label" className="header-nav__menu-icon-label">
                         <i className="bi bi-list"></i>

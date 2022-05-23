@@ -17,16 +17,35 @@
         padding: 1rem;
         @include flex-d-w-j-a-g(row, nowrap, space-between, center, 0);
         &__logo-container {
-            margin: 0;
+            @include flex-d-w-j-a-g(row, nowrap, space-between, center, 2rem);
+        }
+        &__logo{
             width: auto;
             @include flex-d-w-j-a-g(row, nowrap, center, center, 1rem);
         }
-
         //
-        &__logo {
+        &__cart-container{
+            cursor: pointer;
+            position: relative;
+            color: var(--text-light-color);
+            font-size: 1.5rem;
+        }
+        &__cart-items-counter{
+            font-size: 1rem;
+            width: min-content;
+            padding: .2em .6em;
+            border-radius: 1rem;
+            background-color:var(--primary-color);
+            position: absolute;
+            top:-20%;
+            right: -50%;
+        }
+
+        &__logo-img {
             width: 3rem;
         }
-        &__title {
+        &__logo-title {
+            margin: 0;
             font-weight: var(--font-weight-black);
             font-size: 2rem;
             margin: 0;

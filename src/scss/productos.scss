@@ -22,9 +22,10 @@ $black: $regular + 500;
         text-align: center;
         font-size: 2rem;
         color: var(--text-dark-color);
+
         body.body-dark & {
             color: var(--text-light-color);
-          }
+        }
     }
 
     &__button-container {
@@ -52,11 +53,14 @@ $black: $regular + 500;
     }
 
     &__gallery {
-        display: grid;
+        // display: grid;
+        // gap: 1rem;
+        // grid-auto-rows: 220px;
+        // grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
         gap: 1rem;
-        grid-auto-rows: 220px;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
         &-item {
             box-sizing: border-box;
             width: 100%;
@@ -64,9 +68,10 @@ $black: $regular + 500;
             background-color: #fff;
             position: relative;
             animation: active .25s ease-in;
+
             body.body-dark & {
                 background-color: rgb(58, 58, 58);
-              }
+            }
         }
 
         &-item-thumbnail {
@@ -116,10 +121,46 @@ $black: $regular + 500;
 
         &-item-button {
             transition: box-shadow 0.25s ease-in-out;
+
             @include button-hover {
                 box-shadow: 2px 2px 0 2px var(--secondary-color), -2px -2px 0 2px var(--primary-color);
             }
         }
+    }
+}
+
+.productos__producto {
+    &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 200px;
+    }
+
+    &-thumbnail-container {
+        width: 100%;
+    }
+    &-thumbnail {
+        width: 100%;
+    }
+
+    &-price {
+        font-size: 1rem;
+    }
+    &-buy-button{
+        text-decoration: none;
+        color:var(--text-dark-color);
+        background-color: var(--primary-color);
+        padding: 0.5em .5em;
+        display: flex;
+        gap:1rem;
+        justify-items: center;
+        align-items: center;
+        border-radius: 1rem;
+        &-text{
+            margin:0;
+        }    
     }
 }
 
@@ -172,11 +213,9 @@ $black: $regular + 500;
             animation: gradient-inverse 1.5s ease infinite alternate paused;
         }
 
-        &__gallery-item-button:hover {
-        }
+        &__gallery-item-button:hover {}
 
-        &__button:hover {
-        }
+        &__button:hover {}
 
         &__gallery-item:hover &__gallery-item-description {
             transform: none;
@@ -193,7 +232,6 @@ $black: $regular + 500;
             background-color: var(--bg-light-color);
         }
 
-        &__gallery-item-button:hover {
-        }
+        &__gallery-item-button:hover {}
     }
 }
