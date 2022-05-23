@@ -7,14 +7,22 @@ const Games = ({ addItemtoCard }) => {
     const [slug, setSlug] = useState('')
 
     const getGamesFetch = async (url) => {
-        const response = await fetch(url);
-        const { results } = await response.json();
-        setGames(results);
+        try{
+            const response = await fetch(url);
+            const { results } = await response.json();
+            setGames(results);
+        }catch(err) {
+            alert(err);
+        }
     };
     const getGamesAxios = async (url) => {
-        const response = await axios(url);
-        const { results } = response.data;
-        setGames(results);
+        try{
+            const response = await axios(url);
+            const { results } = response.data;
+            setGames(results);
+        }catch(err){
+            alert(err);
+        }
     }
     useEffect(() => {
         const url = `${process.env.REACT_APP_URL}?key=${process.env.REACT_APP_API_TOKEN}&search=${slug}`;
