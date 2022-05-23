@@ -1,3 +1,4 @@
+@import 'cart';
 @import 'mixins';
 @import 'footer';
 @import 'productos';
@@ -20,20 +21,25 @@
   --max-width: 1080px;
 }
 
-  body {
+body {
   font-family: var(--font-family);
   background-color: var(--bg-light-color);
   color: #333;
   margin: 0;
   transition: .3s ease all;
+
   &-dark {
     background: rgb(39, 39, 39);
     color: white;
   }
 }
 
-.root{
+.root {
   background-color: inherit;
-  color:inherit;
+  color: inherit;
   margin: 0;
+}
+
+.main{
+  overflow: hidden;
 }
