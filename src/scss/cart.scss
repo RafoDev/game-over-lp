@@ -5,6 +5,8 @@
     height: 100vh;
     z-index: 500;
     pointer-events: none;
+    padding-bottom: 1rem;
+
     &--show{
         pointer-events: auto;
     }
@@ -38,6 +40,7 @@
         &--show{
             transform: none;
         }
+        overflow: auto;
     }
     
     &__header {
@@ -54,7 +57,7 @@
         &-title {
             margin: 0;
             font-size: 1.5rem;
-            font-weight: 100;
+            font-weight: 300;
             text-transform: uppercase;
 
         }
@@ -93,7 +96,9 @@
         }
         
         &-thumbnail {
+            object-fit: cover;
             width: 60px;
+            height: 100px;
         }
         
         &-name {
@@ -135,6 +140,7 @@
             display: flex;
             flex-direction: column;
             gap:.5rem;
+            
             &-pay {
                 display: flex;
                 justify-content: center;

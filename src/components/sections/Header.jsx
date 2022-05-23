@@ -1,5 +1,4 @@
 import React from 'react'
-import Cart from '../Cart';
 
 const Header = ({ cartItems, setOpenCart }) => {
     const navToggle = document?.getElementById('header-nav__menu-icon-label-close');
@@ -19,9 +18,9 @@ const Header = ({ cartItems, setOpenCart }) => {
                 <nav className="header-nav">
                     <article className="header-nav__logo-container">
                         <div className="header-nav__logo">
-                            <img src="https://i.postimg.cc/fTBMvbKv/icon.png" alt="Logo de PCManía" className="header-nav__logo-img" />
+                            <img src="https://i.postimg.cc/yN3PG97R/394127.png" alt="Logo de PCManía" className="header-nav__logo-img" />
                             <h1 className="header-nav__logo-title">
-                                PCMANÍA
+                                Game Over
                             </h1>
                         </div>
                         <div 
@@ -36,28 +35,28 @@ const Header = ({ cartItems, setOpenCart }) => {
                         </div>
                     </article>
                     <div id="header-nav__menu-icon-label" className="header-nav__menu-icon-label">
-                        <i className="bi bi-list"></i>
+                        <i class="fa-solid fa-bars"></i>
                     </div>
                     <div id="header-nav__menu-icon-label-close" className="header-nav__menu-icon-label-close"
                         onClick={handleToggle}>
-                        <i className="bi bi-x-lg"></i>
+                        <i className="fa-solid fa-xmark"></i>
                     </div>
                     <ul className="header-nav__menu-link-list">
                         <li className="header-nav__list-item">
-                            <a href="" className="header-nav__link">Inicio</a>
+                            <a href="#productos" className="header-nav__link">Inicio</a>
                         </li>
                         <li className="header-nav__list-item">
-                            <a href="" className="header-nav__link">Productos</a>
+                            <a href="#productos" className="header-nav__link">Productos</a>
                         </li>
                         <li className="header-nav__list-item">
-                            <a href="" className="header-nav__link">Contacto</a>
+                            <a href="#contacto" className="header-nav__link">Contacto</a>
                         </li>
-                        <li>
+                        {/* <li>
                             <button className="header-nav__menu-switch" id="header-nav__menu-switch">
                                 <span className="header-nav__menu-switch-label"><i className="bi bi-emoji-sunglasses"></i></span>
                                 <span className="header-nav__menu-switch-label"><i className="bi bi-moon-stars-fill"></i></span>
                             </button>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>

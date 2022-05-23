@@ -6,14 +6,14 @@ const Cart = ({ cartItems, setCartItems, setOpenCart, openCart }) => {
     }
     const [total, setTotal] = useState(0);
     const removeCartItem = (e, id) => {
-        console.log(id);
         const newCartItems = cartItems.filter(ele => ele.id !== id);
         setCartItems(newCartItems);
     }
     useEffect(() => {
         const acum = cartItems.map(item => item.price).reduce((prev, curr) => prev + curr, 0);
         setTotal(acum);
-    },[cartItems])
+        localStorage.setItem('cart', JSON.stringify(cartItems));
+    }, [cartItems])
 
     useEffect(() => {
         const cart = document.getElementById('cart');
@@ -57,13 +57,13 @@ const Cart = ({ cartItems, setCartItems, setOpenCart, openCart }) => {
                                     <ul className="cart__items-list">
                                         {
                                             cartItems.map(item => {
-                                                const { id, name, thumbnail, price } = item;
+                                                const { id, name, background_image, price } = item;
                                                 return (
                                                     <li
                                                         key={id}
                                                         className="cart__list-item">
                                                         <div className="cart__list-item-details">
-                                                            <img src={thumbnail} alt="" className="cart__list-item-thumbnail" />
+                                                            <img src={background_image} alt="" className="cart__list-item-thumbnail" />
                                                             <p className="cart__list-item-name">{name}</p>
                                                         </div>
                                                         <div className="cart__list-item-price">

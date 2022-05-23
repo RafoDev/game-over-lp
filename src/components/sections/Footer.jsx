@@ -4,20 +4,8 @@ const Footer = () => {
   return (
     <footer className="footer" id="contacto">
 		<div className="footer-container">
-			<div className="footer__information">
-				<article className="footer__contacto-container">
-					<h2 className="footer__contacto-title">Contacto</h2>
-					<h3 className="footer__contacto-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						Doloremque, blanditiis.</h3>
-				</article>
-				<article className="footer__servicios-container">
-					<h2 className="footer__servicios-title">Servicios</h2>
-					<h3 className="footer__servicios-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-						Doloremque, blanditiis.</h3>
-				</article>
-			</div>
 			<form className="footer__form">
-				<h2 className="footer__form-title">Escríbenos</h2>
+				<h2 className="footer__form-title">Suscríbete</h2>
 				<input type="text" className="footer__form-input" placeholder="Escribe tu email aquí"/>
 				<button className="footer__form-boton">Enviar</button>
 			</form>

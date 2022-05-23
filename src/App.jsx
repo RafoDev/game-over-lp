@@ -1,11 +1,8 @@
-import './App.css';
-import Contact from './components/sections/Contact';
-import Cover from './components/sections/Cover';
 import Header from './components/sections/Header';
-import Products from './components/sections/Products';
 import Footer from './components/sections/Footer';
 import { useEffect, useState } from 'react';
 import Cart from './components/Cart';
+import Games from './components/sections/Games';
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -19,9 +16,6 @@ function App() {
       setCartItems(cart);
     }
   }, [])
-
-  useEffect(() => {
-  }, [cartItems]);
   
   const [openCart, setOpenCart] = useState(false);
   const addItemtoCard = item => {
@@ -47,11 +41,9 @@ function App() {
         openCart={openCart}
       />
       <main className="main">
-        <Cover />
-        <Products
-          addItemtoCard={addItemtoCard}
+        <Games
+        addItemtoCard={addItemtoCard}
         />
-        <Contact />
         <Footer />
       </main>
     </>
