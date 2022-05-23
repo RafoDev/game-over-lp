@@ -8,9 +8,22 @@ const Header = ({ cartItems, setOpenCart }) => {
         navToggle?.classList.toggle('header-nav__menu-icon-label-close-show');
     });
 
+    const handleSwitchToggle = (() => {
+        const btnSwitch = document.getElementById('header-nav__menu-switch');
+        document.body.classList.toggle('body-dark');
+        btnSwitch.classList.toggle('active');
+
+        if (document.body.classList.contains('body-dark')) {
+            localStorage.setItem('dark-mode', 'true');
+        } else {
+            localStorage.setItem('dark-mode', 'false');
+        }
+    });
+
     const handleOpenCard = () => {
         setOpenCart(true);
     }
+
 
     return (
         <header className="header">
@@ -51,12 +64,14 @@ const Header = ({ cartItems, setOpenCart }) => {
                         <li className="header-nav__list-item">
                             <a href="#contacto" className="header-nav__link">Contacto</a>
                         </li>
-                        {/* <li>
-                            <button className="header-nav__menu-switch" id="header-nav__menu-switch">
+                        <li>
+                            <button className="header-nav__menu-switch" id="header-nav__menu-switch"
+                            onClick={handleSwitchToggle}
+                            >
                                 <span className="header-nav__menu-switch-label"><i className="bi bi-emoji-sunglasses"></i></span>
                                 <span className="header-nav__menu-switch-label"><i className="bi bi-moon-stars-fill"></i></span>
                             </button>
-                        </li> */}
+                        </li>
                     </ul>
                 </nav>
             </div>
