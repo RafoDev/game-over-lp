@@ -28,7 +28,7 @@ body {
   margin: 0;
   transition: .3s ease all;
 
-  &-dark {
+  &.body-dark {
     background: rgb(39, 39, 39);
     color: white;
   }
